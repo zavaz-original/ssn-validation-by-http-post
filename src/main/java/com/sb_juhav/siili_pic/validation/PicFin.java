@@ -18,6 +18,12 @@ import org.springframework.stereotype.Component;
 import com.sb_juhav.DateTools.DateFormatCheck;
 
 /*
+The smart part is the check in the end of the file:
+public boolean isOfValidFormat(String pic)
+The ssn is sent into a java8+ Stream with a chain of several filter & lambda.
+Only a valid ssn will pop out from the end of the chain.
+If the ssn is invalid an Optional Empty will pop out.
+
 personal identity code "pic" used to support internationalization,
 instead of Finland specific "ssn" (social security number).
 

@@ -2,6 +2,15 @@ Virnex Oy / juha valimaki 2022-06-13
 
 # User Guide for SSN/PIC Validation App
 
+### The validation intelligence is in the end of PicFin.java under sb_juhav/siili_pic/validation/
+
+The smart part is the following method in the end of PicFin.java:
+public boolean isOfValidFormat(String pic)
+
+There the ssn is sent into a java8+ Stream with a chain of several filter & lambda.
+Only a valid ssn will pop out from the end of the chain.
+If the ssn is invalid, an Optional Empty will pop out.
+
 ### Note: the name siili will be removed from the java/Spring Boot source codes
 
 There is a company named Siili Solutions Oyj and their web site is siili.com, but this App is NOT from the Siili Solutions Oyj / Siili.com
@@ -10,7 +19,7 @@ I will handle the renaming in the software ASAP and update Github accordingly.
 
 
 Additionally in the next version I will update both the project file structure and the naming of java packages and methods. The current version was written in a hurry to just get the algorithms working.
-
+Especially I don't like my current project tree structure and naming here. I would redesign and rewrite it but I had a lack of time.
 
 It is a Java/Spring Boot Application.
 
